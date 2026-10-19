@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wendy Neo | Senior People Operations & Labour Compliance Leader</title>
+    <style>
+        :root {
+            --primary: #1F4E79;
+            --primary-dark: #123250;
+            --secondary: #2E75B6;
+            --accent: #0284c7;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --border-highlight: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2.5rem 1rem;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            padding: 3rem 2.5rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            border-bottom: 1.5px solid var(--border-highlight);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 1.1rem;
+            background-color: var(--secondary);
+            margin-right: 0.5rem;
+            border-radius: 2px;
+        }
+
+        /* Summary */
+        .summary-text {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .skill-category h3 {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .skill-category p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        /* Experience Elements */
+        .parent-company {
+            background: #f1f5f9;
+            border-left: 4px solid var(--primary);
+            padding: 0.75rem 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .parent-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .parent-date {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .role-card {
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.25rem;
+            gap: 0.5rem;
+        }
+
+        .role-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .role-company {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .role-meta {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 0.6rem;
+        }
+
+        /* Bullet lists */
+        ul.bullet-list {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+        }
+
+        ul.bullet-list li {
+            margin-bottom: 0.55rem;
+            font-size: 0.94rem;
+            color: var(--text-dark);
+            line-height: 1.55;
+        }
+
+        ul.bullet-list li strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 1rem;
+        }
+
+        .edu-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-details {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+                max-width: 100%;
+                padding: 0;
+            }
+            .parent-company {
+                background: #f8fafc;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem 1.25rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .role-header {
+                flex-direction: column;
+                gap: 0.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>WENDY NEO</h1>
+        <div class="subtitle">Senior People Operations & Labour Compliance Leader | APJC</div>
+        <div class="contact-info">
+            <span class="contact-item">📍 Singapore</span>
+            <span class="contact-item">📞 (65) 90183148</span>
+            <span class="contact-item">✉️ <a href="mailto:wendyneo65@gmail.com">wendyneo65@gmail.com</a></span>
+            <span class="contact-item">🔗 <a href="https://github.com/wendyneo65" target="_blank">github.com/wendyneo65</a></span>
+        </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+        <div class="section-title">Professional Summary</div>
+        <p class="summary-text">
+            Scalable People Operations and labour compliance leader with 14+ years of experience engineering high-growth, multi-country HR operations, statutory governance frameworks, and automated employee lifecycle workflows across APJC in enterprise SaaS and tech environments. Proven track record scaling operations from rapid entity setup to enterprise maturity—operationalizing the Splunk India entity, harmonizing employment agreements across 10 APAC markets, and architecting regional self-help playbooks and ServiceNow Tier-0 deflection portals. Expert in scaling compliant, lean HR delivery models by blending deep multi-jurisdiction labour law expertise, agile process engineering, and autonomous AI-driven workflows to scale ClickHouse’s People Operations.
+        </p>
+    </section>
+
+    <!-- Core Competencies -->
+    <section>
+        <div class="section-title">Core Competencies & Technical Expertise</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Multi-Country Compliance & Scalability</h3>
+                <p>Singapore (MOM / CPF / RRA), Australia (Fair Work / LSL), Hong Kong (Cap 57 / 713 ADW), India Entity Setup (PWD / POSH / PF), Japan, China, ASEAN statutory regulations.</p>
+            </div>
+            <div class="skill-category">
+                <h3>Scalable Tier-0 & Self-Help Systems</h3>
+                <p>ServiceNow HRSD Architecture, Knowledge Base Architecture, Tier-0 Self-Service Deflection Hubs, Moveworks Conversational AI on Slack, Regional SOP Playbooks.</p>
+            </div>
+            <div class="skill-category">
+                <h3>Workforce Transitions & Cost Recovery</h3>
+                <p>Scalable Severance Package Modeling, Release Deeds & Notification Letters, Singapore Government-Paid Leave (GPL) Claims (~SGD 80K/year cost savings).</p>
+            </div>
+            <div class="skill-category">
+                <h3>Mobility, Payroll & Digital Lifecycle</h3>
+                <p>Workday Core HCM & BP Configuration, Benefex Benefits Hub, Global Mobility Relocations, IRAS IR21 Tax Clearances, Advanced Excel Modeling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section>
+        <div class="section-title">Professional Work Experience</div>
+
+        <!-- M&A Parent Organization -->
+        <div class="parent-company">
+            <div class="parent-title">Cisco Systems (Acquired Splunk)</div>
+            <div class="parent-date">January 2021 – Present</div>
+        </div>
+
+        <!-- Role 1: Cisco Systems -->
+        <div class="role-card">
+            <div class="role-header">
+                <div class="role-title">People Shared Services Advisor <span class="role-company">| Cisco Systems</span></div>
+            </div>
+            <div class="role-meta">1 November 2025 – Present &nbsp;•&nbsp; Singapore</div>
+            <ul class="bullet-list">
+                <li><strong>Re-Architected Scalable Onboarding Foundations:</strong> Conducted a comprehensive operational review of all onboarding foundation tasks, drafting contextual tooltips and restructuring ServiceNow preboarding journey cards and Workday business process task instructions, achieving an estimated 30% reduction in new hire pre-boarding inquiries across APJC.</li>
+                <li><strong>Automated Workforce Transitions Workflow:</strong> Designed, calculated, and audited master package calculation sheets and established an end-to-end scalable audit tracker linking Outlook email attachments to SharePoint with automated agent checkpoints to handle high-volume workforce transitions.</li>
+                <li><strong>Co-Led Singapore Retirement Policy Working Team:</strong> Partnered with Employment Legal, People Partners, and Singapore Country Leadership to formalize and operationalize the Singapore Retirement and Re-employment Policy; transitioned practices away from fixed-term contracts to continuous employment on existing terms to eliminate age discrimination risks and established automated Workday notifications for retirement milestones.</li>
+                <li><strong>Scaled Global Mobility &amp; Cross-Border Relocations:</strong> Managed cross-border international relocations and ASEAN internal transfers; standardized scalable departure/destination HR workflows, offer approvals in ServiceNow/Workday, statutory tax clearances (IRAS IR21), and payroll cutoff reconciliations.</li>
+                <li><strong>Championed Autonomous AI Operations:</strong> Championed the operational adoption of AI-based navigators and autonomous agents to automate daily ticket triage, mailbox actions, and report generation, driving scalable productivity gains across people services operations.</li>
+            </ul>
+        </div>
+
+        <!-- Role 2: Splunk Services -->
+        <div class="role-card">
+            <div class="role-header">
+                <div class="role-title">Senior HR Advisor / APJC Operations Compliance Project Management Lead <span class="role-company">| Splunk Services Singapore</span></div>
+            </div>
+            <div class="role-meta">January 2021 – 31 October 2024 &nbsp;•&nbsp; Singapore</div>
+            <ul class="bullet-list">
+                <li><strong>Architected Scalable Tier-0 Self-Help &amp; ServiceNow Model:</strong> Redesigned regional ServiceNow infrastructure into a scalable multi-tiered support model across APJC, establishing an automated Tier-0 self-service knowledge base to deflect routine inquiries and streamline Tier-2/3 complex case escalations.</li>
+                <li><strong>Integrated AI-Powered Deflection (Moveworks):</strong> Integrated Tier-0 self-service knowledge content with the Moveworks (Bitsybot) conversational engine on Slack, testing natural language intents to automate instant responses to regional leave policy and benefits inquiries across growing distributed teams.</li>
+                <li><strong>Operationalized Splunk India Legal Entity Setup:</strong> Partnered with Employment Legal, outside counsel, and local leadership to build the operational HR foundation for the new India entity; instituted the statutory Persons with Disability (PWD) policy, structured the POSH Internal Committee, standardized employment contracts, and established statutory threshold governance.</li>
+                <li><strong>Consolidated Regional Playbook Architecture (APAC PC Playbook):</strong> Co-led the end-to-end design and whiteboarding of the APAC People Operations Playbook suite (including Involuntary Restructuring/RIF SOPs, Manager Onboarding Checklists, and India SPOT Process Maps), standardizing scalable HR execution across 10 APAC jurisdictions.</li>
+                <li><strong>Co-Led APJC Contract Harmonization:</strong> Partnered with global employment legal teams and external counsel to localize and harmonize employment agreement templates across 10 APJC jurisdictions, embedding updated terms into Workday for scalable hiring.</li>
+                <li><strong>Led APJC Operations Compliance &amp; Wage Audits:</strong> Partnered with Legal and payroll to resolve calculation formulas under Hong Kong Employment Ordinance (Cap 57), standardizing statutory leave pay rules; built and governed the master Australia Long Service Leave Matrix of Entitlements, standardizing state-by-state accrual calculations.</li>
+                <li><strong>Established Government-Paid Leave Claims &amp; Cost Recovery:</strong> Engineered and established the end-to-end employer reimbursement workflow on the Singapore Government-Paid Leave (GPL) portal, driving direct cost savings of an estimated SGD 80K per year.</li>
+                <li><strong>Governed Scalable Cross-Border Remote Work (SplunkWorks):</strong> Governed compliance evaluations and scalable application workflows for the international remote work policy, assessing permanent establishment tax risks and immigration constraints for temporary cross-border work requests.</li>
+            </ul>
+        </div>
+
+        <!-- Role 3: GlobalFoundries -->
+        <div class="role-card">
+            <div class="role-header">
+                <div class="role-title">HR Business Partner <span class="role-company">| GlobalFoundries Singapore Pte Ltd</span></div>
+            </div>
+            <div class="role-meta">October 2018 – January 2021 &nbsp;•&nbsp; Singapore</div>
+            <ul class="bullet-list">
+                <li><strong>Partnered with Operations &amp; Boosted Engagement:</strong> Delivered strategic HR business partnering across talent acquisition, compensation, and performance management; implemented cross-departmental feedback forums, achieving a 15% increase in employee engagement scores.</li>
+                <li><strong>Managed HR Controlling &amp; Budget Allocation:</strong> Oversaw headcount allocation and payroll cost tracking against annual operational budget plans across manufacturing business units.</li>
+            </ul>
+        </div>
+
+        <!-- Role 4: Mitsui Chemicals -->
+        <div class="role-card">
+            <div class="role-header">
+                <div class="role-title">Senior Executive, HR <span class="role-company">| Mitsui Chemicals Asia Pacific Ltd</span></div>
+            </div>
+            <div class="role-meta">May 2013 – October 2018 &nbsp;•&nbsp; Singapore</div>
+            <ul class="bullet-list">
+                <li><strong>Executed Core HRIS Implementation:</strong> Selected vendor and executed implementation roadmap as part of a 5-member project team to transition the company’s core HRIS to a scalable enterprise platform.</li>
+                <li><strong>Managed Payroll Outsourcing Migration:</strong> Led the end-to-end migration of Singapore payroll operations to an outsourced vendor model, ensuring zero processing delays and 100% statutory compliance.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education & Awards -->
+    <section>
+        <div class="section-title">Education &amp; Awards</div>
+        <div class="edu-item">
+            <div class="edu-title">Nanyang Technological University (NTU)</div>
+            <div class="edu-details">Bachelor of Business (Double Specialisation in Human Resource Consulting &amp; Marketing) &nbsp;•&nbsp; <em>Second Upper Honours</em></div>
+        </div>
+        <div class="edu-item">
+            <div class="edu-title">Finalist for HR Young Gun</div>
+            <div class="edu-details">HRM Asia Pte Ltd (Recognizing high-potential HR leaders across Asia Pacific)</div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
